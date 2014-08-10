@@ -1,0 +1,72 @@
+	@font-face {
+		  font-family: "Museo300";
+		  src: url("http://mams.rmit.edu.au/6crm0fncu40d1.eot");
+		  src: url("http://mams.rmit.edu.au/6crm0fncu40d1.eot?#iefix") format("embedded-opentype"),
+			   url("http://mams.rmit.edu.au/x3u2oqckf06.ttf") format("truetype"),
+			   url("http://mams.rmit.edu.au/ymm4mqckf06.svg#Museo300") format("svg");
+		  font-weight: normal;
+		}
+
+		@font-face {
+		  font-family: "Museo500";
+		  src: url("http://mams.rmit.edu.au/6fpj1fncu40d1.eot");
+		  src: url("http://mams.rmit.edu.au/6fpj1fncu40d1.eot?#iefix") format("embedded-opentype"),
+			   url("http://mams.rmit.edu.au/nwhtz3g0e17.ttf") format("truetype"),
+			   url("http://mams.rmit.edu.au/9u52z3g0e17.svg#Museo500") format("svg");
+		  font-weight: normal;
+		}
+      html,
+      body
+      {
+        margin:0px;
+        padding:0px;
+        color:white;
+		font-family: 'Museo500', 'Museo500FF', Arial;
+		background-color: #00008B;
+      }
+	  
+      header
+      {
+        font-size:259%;
+        font-weight:bold;
+        background-color:#FFFFFF;
+		color:darkblue;
+		padding:10px;
+	  }
+	  
+	  header *
+	  {
+		vertical-align:middle; 
+        margin-right:40px;		
+	  }
+
+      main
+      {
+        background-color: 000000;
+	    padding:10px 10px 50px 30px;
+      }
+	  
+      nav
+      {     
+        background-color: #000000;
+		color:white;
+		padding:10px;
+      }
+
+       footer
+      {     
+        background-color:#000000;
+		color:white;
+		padding:4px;
+      }
+	  
+	  footer *
+	  {
+	    vertical-align:middle;
+	  }
+	  
+	  a
+	   {
+		color:white;
+	  }
+	 
