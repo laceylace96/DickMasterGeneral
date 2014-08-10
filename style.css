@@ -17,56 +17,92 @@
 		}
       html,
       body
-      {
-        margin:0px;
-        padding:0px;
-        color:white;
+		{
+        margin: 0px;
+        padding: 0px;
+        color: white;
 		font-family: 'Museo500', 'Museo500FF', Arial;
-		background-color: #00008B;
-      }
+		background-color: #000000;
+		}
 	  
       header
-      {
+		{
         font-size:259%;
         font-weight:bold;
         background-color:#FFFFFF;
 		color:darkblue;
 		padding:10px;
-	  }
+		margin-left: auto;
+		margin-right: auto;
+		}
 	  
 	  header *
-	  {
+		{
 		vertical-align:middle; 
         margin-right:40px;		
-	  }
+		}
 
       main
-      {
-        background-color: 000000;
-	    padding:10px 10px 50px 30px;
-      }
+		{
+        background-color: #00008B;
+	    padding:10px 10px 50px 10px;
+		margin-left: auto;
+		margin-right: auto;
+		min-width: 600px;
+		width: 85%;
+		}
 	  
       nav
-      {     
+		{     
         background-color: #000000;
 		color:white;
-		padding:10px;
-      }
+		padding: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		}
 
-       footer
-      {     
+	  ul
+		{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		}
+	
+	  li
+		{
+		display: inline;
+		color: white;
+		text-decoration: none;
+		}
+		
+	  a
+		{
+		color: white;
+		text-decoration: none;
+		padding: 10px;
+		}
+	 
+	  a:hover
+		{
+		color: black;
+		background-color: #F0F0F0;
+		border-radius: 5px;
+		}
+		
+	  footer
+		{     
         background-color:#000000;
 		color:white;
 		padding:4px;
-      }
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+		text-align: right;
+		}
 	  
 	  footer *
-	  {
+		{
 	    vertical-align:middle;
-	  }
+		}
 	  
-	  a
-	   {
-		color:white;
-	  }
 	 
