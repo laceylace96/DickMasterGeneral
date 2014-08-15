@@ -19,6 +19,7 @@
 		font-weight: 400;
 		src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(http://fonts.gstatic.com/s/gloriahallelujah/v6/CA1k7SlXcY5kvI81M_R28cNDay8z-hHR7F16xrcXsJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/gloriahallelujah/v6/CA1k7SlXcY5kvI81M_R28Y5mSNQmgKshuii2YddNQzE.woff) format('woff');
 		}	
+		/* Background image sourced from Marit Welker of "welkerphotography.com" and made available under the Creative Commons License*/
 		
       html,
       body
@@ -27,7 +28,9 @@
         padding: 0px;
         color: white;
 		font-family: Open Sans;
-		background-color:#00007A;
+		background-image:url("background.jpg");
+		background-color:#000000;
+		background-size:100%;
 		}
 	  
       header
@@ -48,7 +51,6 @@
 
       main
 		{
-        background-color: #00007A;
 	    padding:10px 10px 50px 10px; 
 		}
 	  
