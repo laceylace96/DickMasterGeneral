@@ -28,7 +28,7 @@
         padding: 0px;
         color: white;
 		font-family: Open Sans;
-		background-image:url("background.jpg");
+		background-image:url("../images/background.jpg");
 		background-color:#000000;
 		background-size:100%;
 		}
@@ -38,7 +38,7 @@
         font-size:300%;
 		font-weight:bold;
         background-color:#000000;
-		color:darkblue;
+		color:blue;
 		padding:5px;
 		font-family: Gloria Hallelujah;
 		}
