@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <title>Bloo-Roo Pictures | Home</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+	.content
+	{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:center;
+	}
+	
+	#movieinfo
+	{
+	order: 1;
+	margin-right:15px;
+	}
+	
+	#bookform
+	{
+	order: 2;
+	margin-left:15px;
+	}
+	</style>
   </head>
 
   <body>
@@ -16,13 +36,85 @@
 		<ul>
 		<li><a href="index.html">Home</a></li> 
 		<li><a href="movies.html">Movies</a></li>
-		<li><a href="tickets.php">Tickets</a></li>
+		<li><a href="tickets.html">Tickets</a></li>
 		<li><a href="contact.html">Contact Us</a></li>
 		</ul>
     </nav>
 
     <main>
-	stuff
+	<div class="content">
+	<div id="movieinfo">
+	</div>
+	<div id="bookform">
+	<form action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php" method="post">
+	<h2> Book Now </h2>
+	Film <br />
+	<select name="film">
+	<option value="F001">blah</option>
+	<option value="F002">blah</option>
+	<option value="F003">blah</option>
+	<option value="F004">blah</option>
+	</select>
+	<br />Cinema<br />
+	<input type="radio" name="cinema" value="maxima" checked /> Maxima
+	<input type="radio" name="cinema" value="rivola" /> Rivola
+	<br />Day<br />
+	<select name="day">
+	<option value="mon">Monday</option>
+	<option value="tue">Tuesday</option>
+	<option value="wed">Wednesday</option>
+	<option value="thu">Thursday</option>
+	<option value="fri">Friday</option>
+	<option value="sat">Saturday</option>
+	<option value="sun">Sunday</option>
+	</select>
+	<br />Time<br />
+	<select name="time">
+	<option value="12pm">12pm</option>
+	<option value="3pm">3pm</option>
+	<option value="4pm">4pm</option>
+	<option value="6pm">6pm</option>
+	<option value="7pm">7pm</option>
+	<option value="9pm">9pm</option>
+	</select>
+	<br /><br />
+	
+	<table>
+	<tr><td><b>Regular Seating</b></td></tr>
+	<tr>
+	<td>Adult</td>
+	<td> <input type="number" name="adult" min="0" max="40" value="0" required></td>
+	</tr>
+	<tr>
+	<td>Concession</td>
+	<td> <input type="number" name="concession" min="0" max="40" value="0" required></td>
+	</tr>
+	<tr>
+	<td>Child</td>
+	<td> <input type="number" name="child" min="0" max="40" value="0" required></td>
+	</tr>
+	<tr><td><b>Beanbags</b></td></tr>
+	<tr>
+	<td>Number </td>
+	<td> <input type="number" name="beanbag" min="0" max="13" value="0" required></td>
+	</tr>
+	
+	<tr><td><b>First Class Seating</b></td></tr>
+	<tr>
+	<td>Adult</td>
+	<td> <input type="number" name="firstadult" min="0" max="12" value="0" required></td>
+	</tr>
+	<tr>
+	<td>Child</td>
+	<td> <input type="number" name="firstchild" min="0" max="12" value="0" required></td>
+	</tr>
+	</table>
+	
+	<br /><b>Total</b><br />
+	<input type="submit" value="Book Now"/>
+	</form>
+	</div>
+	</div>
 	</main>
 
     <footer>
