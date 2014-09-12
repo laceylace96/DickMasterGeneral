@@ -3,26 +3,42 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Bloo-Roo Pictures | Contact Us</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Bloo-Roo Pictures | Home</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
-	.content
+	.flexbox
 	{
 	display: flex;
 	flex-flow: row wrap;
-	justify-content:center;
+	align-items: flex-start;
 	}
 	
-	#info
+	#movie1
 	{
 	order: 1;
-	margin-right:15px;
+	flex-basis:450px;
+	flex-grow:1;
 	}
 	
-	#contact
+	#movie2
 	{
 	order: 2;
-	margin-left:15px;
+	flex-basis:450px;
+	flex-grow:1;
+	}
+	
+	#movie3
+	{
+	order: 3;
+	flex-basis:450px;
+	flex-grow:1;
+	}
+	
+	#movie4
+	{
+	order: 4;
+	flex-basis:450px;
+	flex-grow:1;
 	}
 	</style>
   </head>
@@ -32,7 +48,7 @@
     <header>
         <div> <img src="images/logo.jpg" alt="bloo roo logo" width="140" height="70"/> Bloo Roo Pictures </div>
     </header>
-
+	
     <nav>
 		<ul>
 		<li><a href="index.html">Home</a></li> 
@@ -40,36 +56,26 @@
 		<li><a href="tickets.php">Tickets</a></li>
 		<li><a href="contact.html">Contact Us</a></li>
 		</ul>
-	</nav>
+    </nav>
 
     <main>
-	<div class="content">
-	<div id="info">
-	<h2>Contact Details</h2>
-	<p><b>Phone:</b> 1300-975-711<br /><b>Email:</b> contact@brpictures.com </p><hr />
-	<h2>Address</h2>
-	<p>101 Scenic Avenue <br />Cinematic Meadows <br />Moovay, 4102</p><hr />
+	<div class="flexbox">
+	
+	<div id="movie1">
+	</div>
+	
+	<div id="movie2">
+	</div>
+	
+	<div id="movie3">
+	</div>
+	
+	<div id="movie4">
+	</div>
+	
 	</div>
 
-	<div id="contact">
-	<h2>Contact Us</h2>
-	<form action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php" method="post">
-	Email Address <br /> <input type="email" name="email" placeholder="example@domain.com" required /> 
-	<br /> Subject <br /> 
-	<select name="subject">
-	<option value="ticket-enquiry">Ticket Enquiry</option>
-	<option value="private-booking">Private Booking</option>
-	<option value="careers">Careers</option>
-	<option value="feedback">Feedback</option>
-	<option value="other">Other</option>
-	</select>
-	<br /> Message <br /> 
-	<textarea name="message" required> </textarea> 
-	<br /> <input type="submit" />
-	</form>
-	</div>
-	</div>
-    </main>
+	</main>
 
     <footer>
       &copy; Bloo Roo Pictures 2014 | Nguyen Ho s3492627 & Lacey Attridge s3491782 | 
