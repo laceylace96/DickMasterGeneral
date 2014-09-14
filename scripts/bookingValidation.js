@@ -8,28 +8,27 @@ function validateCinema()
 {
 	var day = document.getElementById("day");
 	var time = document.getElementById("time");
-	
 	if (document.getElementById("rivola").checked)
 	{		
 		clear(day);
-		day.options[0] = new Option ("Wednesday","Wednesday");
-		day.options[1] = new Option ("Thursday","Thursday");
-		day.options[2] = new Option ("Friday","Friday");
-		day.options[3] = new Option ("Saturday","Saturday");
-		day.options[4] = new Option ("Sunday","Sunday");
+		day.options[0] = new Option("Wednesday","Wednesday");
+		day.options[1] = new Option("Thursday","Thursday");
+		day.options[2] = new Option("Friday","Friday");
+		day.options[3] = new Option("Saturday","Saturday");
+		day.options[4] = new Option("Sunday","Sunday");
 		clear(time);
-		time.options[0] = new Option ("12pm","12pm");
-		time.options[1] = new Option ("4pm","4pm");
-		time.options[2] = new Option ("7pm","7pm");
+		time.options[0] = new Option("12pm","12pm");
+		time.options[1] = new Option("4pm","4pm");
+		time.options[2] = new Option("7pm","7pm");
 		document.getElementById("seat_adult").disabled = false;
 		document.getElementById("seat_concession").disabled = false;
 		document.getElementById("seat_child").disabled = false;
-		document.getElementById("seat_bean").disabled = true;
-		document.getElementById("seat_first_adult").disabled = true;
-		document.getElementById("seat_first_child").disabled = true;
 		document.getElementById("seat_bean").value = 0;
 		document.getElementById("seat_first_adult").value = 0;
 		document.getElementById("seat_first_child").value = 0;
+		document.getElementById("seat_bean").disabled = true;
+		document.getElementById("seat_first_adult").disabled = true;
+		document.getElementById("seat_first_child").disabled = true;
 	}
 	
 	else if (document.getElementById("maxima").checked)
@@ -42,7 +41,7 @@ function validateCinema()
 		day.options[4] = new Option ("Friday","Friday");
 		day.options[5] = new Option ("Saturday","Saturday");
 		day.options[6] = new Option ("Sunday","Sunday");
-		clear(time);
+		time.options.length = 0;
 		time.options[0] = new Option ("3pm","3pm");
 		time.options[1] = new Option ("6pm","6pm");
 		time.options[2] = new Option ("9pm","9pm");
@@ -64,6 +63,7 @@ function validateCinema()
 		document.getElementById("seat_first_child").disabled = true;
 	}
 }
+
 function clear(dropdown)
 {
     var i;
@@ -99,7 +99,7 @@ function calculate()
 		}
 		confirm();
 	}
-	document.getElementById("cost").innerHTML = document.getElementById("price").value;
+	document.getElementById("cost").innerHTML = "$" + (document.getElementById("price").value);
 }
 
 function calculateDiscountMaxima()
