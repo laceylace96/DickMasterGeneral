@@ -53,10 +53,10 @@
 	<h2> Book Now </h2>
 	Film <br />
 	<select id="film" name="film" onchange="validate()" required>
-	<option value="F001">blah</option>
-	<option value="F002">blah</option>
-	<option value="F003">blah</option>
-	<option value="F004">blah</option>
+	<option value="F001">Blended</option>
+	<option value="F002">Teenage Mutant Ninja Turtles</option>
+	<option value="F003">The Lego Movie</option>
+	<option value="F004">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
 	</select>
 	<br />Cinema<br />
 	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validate()" required /> Maxima
@@ -74,37 +74,43 @@
 	<tr>
 	<td>Adult</td>
 	<td> <input id="seat_adult" type="number" name="seat_adult" min="0" max="40" value="0" required></td>
+	<td id="price_adult"></td>
 	</tr>
 	<tr>
 	<td>Concession</td>
 	<td> <input id="seat_concession" type="number" name="seat_concession" min="0" max="40" value="0" required></td>
+	<td id="price_concession"></td>
 	</tr>
 	<tr>
 	<td>Child</td>
 	<td> <input id="seat_child" type="number" name="seat_child" min="0" max="40" value="0" required></td>
+	<td id="price_child"></td>
 	</tr>
 	<tr><td><b>Beanbags</b></td></tr>
 	<tr>
 	<td>Number </td>
 	<td> <input id="seat_bean" type="number" name="seat_bean" min="0" max="13" value="0" required></td>
+	<td id="price_bean"></td>
 	</tr>
 	
 	<tr><td><b>First Class Seating</b></td></tr>
 	<tr>
 	<td>Adult</td>
 	<td> <input id="seat_first_adult" type="number" name="seat_first_adult" min="0" max="12" value="0" required></td>
+	<td id="price_first_adult"></td>
 	</tr>
 	<tr>
 	<td>Child</td>
 	<td> <input id="seat_first_child" type="number" name="seat_first_child" min="0" max="12" value="0" required></td>
+	<td id="price_first_child"></td>
 	</tr><tr>
-	<td><b>Total</b></td>
+	<td><b>Total</b></td><td></td>
 	<td id="cost"></td></tr><br />
 	</table>
-	<input id="price" type="number" name="price" required hidden>
-	<button onclick="confirm()">Confirm Selection</button>
-	<input id="submit" onclick="validate()" type="submit" value="Book Now!"/>
+	<input id="price" type="number" name="price" value="0" required hidden>
+	<input id="submit" type="submit" />
 	</form>
+	<button onclick="calculate()">Calculate Price</button>
 	</div>
 	</div>
 	</main>
