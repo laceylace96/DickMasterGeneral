@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="UTF-8">
     <title>Bloo-Roo Pictures | Tickets</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="scripts/bookingValidation.js"></script>
+	<script type="text/javascript" src="scripts/bookingValidation.js"></script>
 	<style>
 	.content
 	{
@@ -74,24 +74,40 @@
 	<h2> Book Now </h2>
 	Film <br />
 	<select id="film" name="film" onchange="validate()" required>
+	<option value="">Select Movie</option>
 	<option value="F001">Blended</option>
 	<option value="F002">Teenage Mutant Ninja Turtles</option>
 	<option value="F003">The Lego Movie</option>
 	<option value="F004">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
 	</select>
 	<br />Cinema<br />
-	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validate()" required /> Maxima
-	<input id="rivola" type="radio" name="cinema" value="rivola" onchange="validate()" required /> Rivola
+	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validate(), resetSelection()" required /> Maxima
+	<input id="rivola" type="radio" name="cinema" value="rivola" onchange="validate(), resetSelection()" required /> Rivola
 	<br />Day<br />
 	<select id="day" name="day"  onchange="validate()" required>
+	<option value="">Select Day</option>
+	<option id="mon" value="mon">Monday</option>
+	<option id="tue" value="tue">Tuesday</option>
+	<option id="wed" value="wed">Wednesday</option>
+	<option id="thu" value="thu">Thursday</option>
+	<option id="fri" value="fri">Friday</option>
+	<option id="sat" value="sat">Saturday</option>
+	<option id="sun" value="sun">Sunday</option>
 	</select>
 	<br />Time<br />
 	<select id="time" name="time" onchange="validate()" required>
+	<option value="">Select Time</option>
+	<option id="12pm" value="12pm">12pm</option>
+	<option id="3pm" value="3pm">3pm</option>
+	<option id="4pm" value="4pm">4pm</option>
+	<option id="6pm" value="6pm">6pm</option>
+	<option id="7pm" value="7pm">7pm</option>
+	<option id="9pm" value="9pm">9pm</option>
 	</select>
 	<br />
 	
 	<table id="bookseating">
-	<tr><td><b>Regular Seating</b></td></tr>
+	<tr><td><b>Regular Seating</b></td><td></td><td></td></tr>
 	<tr>
 	<td>Adult</td>
 	<td> <input id="seat_adult" type="number" name="seat_adult" min="0" max="40" value="0" required></td>
@@ -107,14 +123,14 @@
 	<td> <input id="seat_child" type="number" name="seat_child" min="0" max="40" value="0" required></td>
 	<td id="price_child"></td>
 	</tr>
-	<tr><td><b>Beanbags</b></td></tr>
+	<tr><td><b>Beanbags</b></td><td></td><td></td></tr>
 	<tr>
 	<td>Number </td>
 	<td> <input id="seat_bean" type="number" name="seat_bean" min="0" max="13" value="0" required></td>
 	<td id="price_bean"></td>
 	</tr>
 	
-	<tr><td><b>First Class Seating</b></td></tr>
+	<tr><td><b>First Class Seating</b></td><td></td><td></td></tr>
 	<tr>
 	<td>Adult</td>
 	<td> <input id="seat_first_adult" type="number" name="seat_first_adult" min="0" max="12" value="0" required></td>
@@ -126,8 +142,9 @@
 	<td id="price_first_child"></td>
 	</tr><tr>
 	<td><b>Total</b></td><td></td>
-	<td id="cost"></td></tr><br />
+	<td id="cost"></td></tr>
 	</table>
+	<br />
 	<input id="price" type="number" name="price" value="0" required hidden>
 	<input id="submit" type="submit" />
 	</form>

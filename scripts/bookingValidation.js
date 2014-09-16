@@ -1,7 +1,7 @@
 function validate() 
 {
-  unconfirm()
   validateCinema();
+  unconfirm();
 }
 
 function validateCinema()
@@ -10,16 +10,14 @@ function validateCinema()
 	var time = document.getElementById("time");
 	if (document.getElementById("rivola").checked)
 	{		
-		clear(day);
-		day.options[0] = new Option("Wednesday","Wednesday");
-		day.options[1] = new Option("Thursday","Thursday");
-		day.options[2] = new Option("Friday","Friday");
-		day.options[3] = new Option("Saturday","Saturday");
-		day.options[4] = new Option("Sunday","Sunday");
-		clear(time);
-		time.options[0] = new Option("12pm","12pm");
-		time.options[1] = new Option("4pm","4pm");
-		time.options[2] = new Option("7pm","7pm");
+		document.getElementById("mon").disabled = true;
+		document.getElementById("tue").disabled = true;
+		document.getElementById("12pm").disabled = false;
+		document.getElementById("4pm").disabled = false;
+		document.getElementById("7pm").disabled = false;
+		document.getElementById("3pm").disabled = true;
+		document.getElementById("6pm").disabled = true;
+		document.getElementById("9pm").disabled = true;
 		document.getElementById("seat_adult").disabled = false;
 		document.getElementById("seat_concession").disabled = false;
 		document.getElementById("seat_child").disabled = false;
@@ -33,18 +31,14 @@ function validateCinema()
 	
 	else if (document.getElementById("maxima").checked)
 	{		
-		clear(day);
-		day.options[0] = new Option ("Monday","Monday");
-		day.options[1] = new Option ("Tuesday","Tuesday");
-		day.options[2] = new Option ("Wednesday","Wednesday");
-		day.options[3] = new Option ("Thursday","Thursday");
-		day.options[4] = new Option ("Friday","Friday");
-		day.options[5] = new Option ("Saturday","Saturday");
-		day.options[6] = new Option ("Sunday","Sunday");
-		time.options.length = 0;
-		time.options[0] = new Option ("3pm","3pm");
-		time.options[1] = new Option ("6pm","6pm");
-		time.options[2] = new Option ("9pm","9pm");
+		document.getElementById("mon").disabled = false;
+		document.getElementById("tue").disabled = false;
+		document.getElementById("12pm").disabled = true;
+		document.getElementById("4pm").disabled = true;
+		document.getElementById("7pm").disabled = true;
+		document.getElementById("3pm").disabled = false;
+		document.getElementById("6pm").disabled = false;
+		document.getElementById("9pm").disabled = false;
 		document.getElementById("seat_adult").disabled = false;
 		document.getElementById("seat_concession").disabled = false;
 		document.getElementById("seat_child").disabled = false;
@@ -67,7 +61,7 @@ function validateCinema()
 function clear(dropdown)
 {
     var i;
-    for(i=dropdown.options.length-1;i>=0;i--)
+    for(i=dropdown.options.length-1;i>=1;i--)
     {
         dropdown.remove(i);
     }
@@ -105,22 +99,22 @@ function calculate()
 function calculateDiscountMaxima()
 {
 	var seatAdult = document.getElementById("seat_adult").value;
-	document.getElementById("price_adult").innerHTML = seatAdult*12;
+	document.getElementById("price_adult").innerHTML = "$" + (seatAdult*12);
 	
 	var seatConcession = document.getElementById("seat_concession").value;
-	document.getElementById("price_concession").innerHTML = seatConcession*10;
+	document.getElementById("price_concession").innerHTML = "$" + (seatConcession*10);
 	
 	var seatChild = document.getElementById("seat_child").value;
-	document.getElementById("price_child").innerHTML = seatChild*8;
+	document.getElementById("price_child").innerHTML = "$" + (seatChild*8);
 	
 	var seatFirstAdult = document.getElementById("seat_first_adult").value;
-	document.getElementById("price_first_adult").innerHTML = seatFirstAdult*25;
+	document.getElementById("price_first_adult").innerHTML = "$" + (seatFirstAdult*25);
 	
 	var seatFirstChild = document.getElementById("seat_first_child").value;
-	document.getElementById("price_first_child").innerHTML = seatFirstChild*20;
+	document.getElementById("price_first_child").innerHTML = "$" + (seatFirstChild*20);
 	
 	var seatBean = document.getElementById("seat_bean").value;
-	document.getElementById("price_bean").innerHTML = seatBean*20;
+	document.getElementById("price_bean").innerHTML = "$" + (seatBean*20);
 	
 	document.getElementById("price").value = seatAdult*12 + seatChild*8 + seatConcession*10 +seatFirstAdult*25 + seatFirstChild*20 + seatBean*20;
 }
@@ -128,13 +122,13 @@ function calculateDiscountMaxima()
 function calculateDiscountRivola()
 {
 	var seatAdult = document.getElementById("seat_adult").value;
-	document.getElementById("price_adult").innerHTML = seatAdult*12;
+	document.getElementById("price_adult").innerHTML = "$" + (seatAdult*12);
 	
 	var seatConcession = document.getElementById("seat_concession").value;
-	document.getElementById("price_concession").innerHTML = seatConcession*10;
+	document.getElementById("price_concession").innerHTML = "$" + (seatConcession*10);
 	
 	var seatChild = document.getElementById("seat_child").value;
-	document.getElementById("price_child").innerHTML = seatChild*8;
+	document.getElementById("price_child").innerHTML = "$" + (seatChild*8);
 	
 	document.getElementById("price").value = seatAdult*12 + seatChild*8 + seatConcession*10;
 }
@@ -142,22 +136,22 @@ function calculateDiscountRivola()
 function calculateFullMaxima()
 {
 	var seatAdult = document.getElementById("seat_adult").value;
-	document.getElementById("price_adult").innerHTML = seatAdult*18;
+	document.getElementById("price_adult").innerHTML = "$" + (seatAdult*18);
 	
 	var seatConcession = document.getElementById("seat_concession").value;
-	document.getElementById("price_concession").innerHTML = seatConcession*15;
+	document.getElementById("price_concession").innerHTML = "$" + (seatConcession*15);
 	
 	var seatChild = document.getElementById("seat_child").value;
-	document.getElementById("price_child").innerHTML = seatChild*12;
+	document.getElementById("price_child").innerHTML = "$" + (seatChild*12);
 	
 	var seatFirstAdult = document.getElementById("seat_first_adult").value;
-	document.getElementById("price_first_adult").innerHTML = seatFirstAdult*30;
+	document.getElementById("price_first_adult").innerHTML = "$" + (seatFirstAdult*30);
 	
 	var seatFirstChild = document.getElementById("seat_first_child").value;
-	document.getElementById("price_first_child").innerHTML = seatFirstChild*25;
+	document.getElementById("price_first_child").innerHTML = "$" + (seatFirstChild*25);
 	
 	var seatBean = document.getElementById("seat_bean").value;
-	document.getElementById("price_bean").innerHTML = seatBean*30;
+	document.getElementById("price_bean").innerHTML = "$" + (seatBean*30);
 	
 	document.getElementById("price").value = seatAdult*18 + seatChild*12 + seatConcession*15 +seatFirstAdult*30 + seatFirstChild*25 + seatBean*30;
 }
@@ -165,13 +159,13 @@ function calculateFullMaxima()
 function calculateFullRivola()
 {
 	var seatAdult = document.getElementById("seat_adult").value;
-	document.getElementById("price_adult").innerHTML = seatAdult*18;
+	document.getElementById("price_adult").innerHTML = "$" + (seatAdult*18);
 	
 	var seatConcession = document.getElementById("seat_concession").value;
-	document.getElementById("price_concession").innerHTML = seatConcession*15;
+	document.getElementById("price_concession").innerHTML = "$" + (seatConcession*15);
 	
 	var seatChild = document.getElementById("seat_child").value;
-	document.getElementById("price_child").innerHTML = seatChild*12;
+	document.getElementById("price_child").innerHTML = "$" + (seatChild*12);
 	
 	document.getElementById("price").value = seatAdult*18 + seatChild*12 + seatConcession*15;
 }
@@ -192,4 +186,10 @@ function confirm()
 	document.getElementById("submit").disabled = false;
 	document.getElementById("submit").value="Book Now!";
 	}
+}
+
+function resetSelection()
+{
+	document.getElementById("day").selectedIndex = 0;
+	document.getElementById("time").selectedIndex = 0;
 }
