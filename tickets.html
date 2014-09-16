@@ -13,15 +13,20 @@
 	justify-content:center;
 	}
 	
-	#info
+	#info_table
 	{
-	order: 1;
+	order:1;
+	}
+	
+	#info_box
+	{
+	order: 2;
 	margin-right:15px;
 	}
 	
-	#bookform
+	#book_form
 	{
-	order: 2;
+	order: 3;
 	margin-left:15px;
 	}
 	</style>
@@ -44,7 +49,7 @@
 
     <main>
 	<div class="content">
-	<div id="info">
+	<div id="info_table">
 		<table style="width:100%">
   <tr>
     <th>Cinema</th>
@@ -66,19 +71,22 @@
   </tr>
 </table>
 
-
 	</div>
 	
-	<div id="bookform">
+	<div id="info_box">
+	<p id="variable_message"></p>
+	</div>
+	
+	<div id="book_form">
 	<form action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php" method="post">
 	<h2> Book Now </h2>
 	Film <br />
-	<select id="film" name="film" onchange="validate()" required>
+	<select id="film" name="film" onchange="validate() resetSelection()" required>
 	<option value="">Select Movie</option>
-	<option value="F001">Blended</option>
-	<option value="F002">Teenage Mutant Ninja Turtles</option>
+	<option value="F001">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
+	<option value="F002">Blended</option>
 	<option value="F003">The Lego Movie</option>
-	<option value="F004">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
+	<option value="F004">Teenage Mutant Ninja Turtles</option>
 	</select>
 	<br />Cinema<br />
 	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validate(), resetSelection()" required /> Maxima

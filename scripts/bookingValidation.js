@@ -1,13 +1,19 @@
 function validate() 
 {
   validateCinema();
+  validateMovie();
   unconfirm();
 }
 
 function validateCinema()
 {
-	var day = document.getElementById("day");
-	var time = document.getElementById("time");
+	var seat_adult = document.getElementById("seat_adult");
+	var seat_concession = document.getElementById("seat_concession");
+	var seat_child = document.getElementById("seat_child");
+	var seat_bean = document.getElementById("seat_bean");
+	var seat_first_adult = document.getElementById("seat_first_adult");
+	var seat_first_child = document.getElementById("seat_first_child");
+	
 	if (document.getElementById("rivola").checked)
 	{		
 		document.getElementById("mon").disabled = true;
@@ -18,15 +24,15 @@ function validateCinema()
 		document.getElementById("3pm").disabled = true;
 		document.getElementById("6pm").disabled = true;
 		document.getElementById("9pm").disabled = true;
-		document.getElementById("seat_adult").disabled = false;
-		document.getElementById("seat_concession").disabled = false;
-		document.getElementById("seat_child").disabled = false;
-		document.getElementById("seat_bean").value = 0;
-		document.getElementById("seat_first_adult").value = 0;
-		document.getElementById("seat_first_child").value = 0;
-		document.getElementById("seat_bean").disabled = true;
-		document.getElementById("seat_first_adult").disabled = true;
-		document.getElementById("seat_first_child").disabled = true;
+		seat_adult.disabled = false;
+		seat_concession.disabled = false;
+		seat_child.disabled = false;
+		seat_bean.value = 0;
+		seat_first_adult.value = 0;
+		seat_first_child.value = 0;
+		seat_bean.disabled = true;
+		seat_first_adult.disabled = true;
+		seat_first_child.disabled = true;
 	}
 	
 	else if (document.getElementById("maxima").checked)
@@ -39,32 +45,31 @@ function validateCinema()
 		document.getElementById("3pm").disabled = false;
 		document.getElementById("6pm").disabled = false;
 		document.getElementById("9pm").disabled = false;
-		document.getElementById("seat_adult").disabled = false;
-		document.getElementById("seat_concession").disabled = false;
-		document.getElementById("seat_child").disabled = false;
-		document.getElementById("seat_bean").disabled = false;
-		document.getElementById("seat_first_adult").disabled = false;
-		document.getElementById("seat_first_child").disabled = false;
+		seat_adult.disabled = false;
+		seat_concession.disabled = false;
+		seat_child.disabled = false;
+		seat_bean.disabled = false;
+		seat_first_adult.disabled = false;
+		seat_first_child.disabled = false;
 	}
 	
 	else
 	{		
-		document.getElementById("seat_adult").disabled = true;
-		document.getElementById("seat_concession").disabled = true;
-		document.getElementById("seat_child").disabled = true;
-		document.getElementById("seat_bean").disabled = true;
-		document.getElementById("seat_first_adult").disabled = true;
-		document.getElementById("seat_first_child").disabled = true;
+		seat_adult.disabled = true;
+		seat_concession.disabled = true;
+		seat_child.disabled = true;
+		seat_bean.disabled = true;
+		seat_first_adult.disabled = true;
+		seat_first_child.disabled = true;
 	}
 }
 
-function clear(dropdown)
+function validateMovie()
 {
-    var i;
-    for(i=dropdown.options.length-1;i>=1;i--)
-    {
-        dropdown.remove(i);
-    }
+	//<option value="F001">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
+	//<option value="F002">Blended</option>
+	//<option value="F003">The Lego Movie</option>
+	//<option value="F004">Teenage Mutant Ninja Turtles</option>
 }
 
 function calculate()
