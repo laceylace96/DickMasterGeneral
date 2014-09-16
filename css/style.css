@@ -132,4 +132,10 @@
 	    vertical-align:middle;
 		}
 	  
+	  select option:disabled
+	  {
+	  visibility:hidden;
+	  display:none;
+	 }
+	  
 	 

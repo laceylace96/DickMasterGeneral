@@ -13,26 +13,28 @@
 	justify-content:center;
 	}
 	
-	#info_table
-	{
-	order:1;
-	}
-	
 	#info_box
 	{
-	order: 2;
+	order: 1;
 	margin-right:15px;
+	flex-basis:220px;
 	}
 	
 	#book_form
 	{
-	order: 3;
+	order: 2;
 	margin-left:15px;
+	flex-basis:450px;
+	}
+	
+	#contact
+	{
+	padding:0px;
 	}
 	</style>
   </head>
 
-  <body onload="validate()">
+  <body onload="validateCinema()">
 
     <header>
         <div> <img src="images/logo.jpg" alt="bloo roo logo" width="140" height="70"/> Bloo Roo Pictures </div>
@@ -48,7 +50,6 @@
     </nav>
 
     <main>
-	<div class="content">
 	<div id="info_table">
 		<table style="width:100%">
   <tr>
@@ -72,8 +73,10 @@
 </table>
 
 	</div>
-	
+	<div class="content">
 	<div id="info_box">
+	<br /><br /><br />
+	<h4>Having Trouble Booking? Want A Private Function?<a id="contact" href="contact.html"><u>Contact Us</u>!</a></h4>
 	<p id="variable_message"></p>
 	</div>
 	
@@ -81,7 +84,7 @@
 	<form action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php" method="post">
 	<h2> Book Now </h2>
 	Film <br />
-	<select id="film" name="film" onchange="validate() resetSelection()" required>
+	<select id="film" name="film" onchange="validateMovie()" required>
 	<option value="">Select Movie</option>
 	<option value="F001">The 100 Year-Old Man Who Climbed Out Of The Window And Disappeared</option>
 	<option value="F002">Blended</option>
@@ -89,10 +92,10 @@
 	<option value="F004">Teenage Mutant Ninja Turtles</option>
 	</select>
 	<br />Cinema<br />
-	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validate(), resetSelection()" required /> Maxima
-	<input id="rivola" type="radio" name="cinema" value="rivola" onchange="validate(), resetSelection()" required /> Rivola
+	<input id="maxima" type="radio" name="cinema" value="maxima" onchange="validateCinema()" required /> Maxima
+	<input id="rivola" type="radio" name="cinema" value="rivola" onchange="validateCinema()" required /> Rivola
 	<br />Day<br />
-	<select id="day" name="day"  onchange="validate()" required>
+	<select id="day" name="day"  onchange="unconfirm()" required>
 	<option value="">Select Day</option>
 	<option id="mon" value="mon">Monday</option>
 	<option id="tue" value="tue">Tuesday</option>
@@ -103,7 +106,7 @@
 	<option id="sun" value="sun">Sunday</option>
 	</select>
 	<br />Time<br />
-	<select id="time" name="time" onchange="validate()" required>
+	<select id="time" name="time" onchange="unconfirm()" required>
 	<option value="">Select Time</option>
 	<option id="12pm" value="12pm">12pm</option>
 	<option id="3pm" value="3pm">3pm</option>
@@ -156,7 +159,7 @@
 	<input id="price" type="number" name="price" value="0" required hidden>
 	<input id="submit" type="submit" />
 	</form>
-	<button onclick="calculate()">Calculate Price</button>
+	<button onclick="confirm()">Calculate Price</button>
 	</div>
 	</div>
 	</main>
