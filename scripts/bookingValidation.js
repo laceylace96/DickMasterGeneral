@@ -50,20 +50,20 @@ function validateCinema()
 	{		
 		if (film == "F003")//LEGO
 		{
-		document.getElementById("12pm").disabled = false;
+		time_12.disabled = false;
 		wed.disabled = false;
 		thu.disabled = false;
 		fri.disabled = false;
 		}
 		else if (film == "F004")//TMNT
 		{
-		document.getElementById("4pm").disabled = false;
+		time_4.disabled = false;
 		sat.disabled = false;
 		sun.disabled = false;
 		}
 		else if (film == "F001")//100YRMAN
 		{
-		document.getElementById("7pm").disabled = false;
+		time_7.disabled = false;
 		wed.disabled = false;
 		thu.disabled = false;
 		fri.disabled = false;
