@@ -156,7 +156,7 @@ function calculate()
 {
 	if (document.getElementById("maxima").checked)
 	{
-		if (document.getElementById("day").value=="Monday" || document.getElementById("day").value=="Tuesday")
+		if (document.getElementById("day").value=="mon" || document.getElementById("day").value=="tue")
 		{
 		calculateDiscountMaxima();
 		}
@@ -257,33 +257,77 @@ function unconfirm()
 {
 	document.getElementById("submit").disabled = true;
 	document.getElementById("submit").value="Please Calculate Total";
+	document.getElementById("price_first_adult").innerHTML = "";
+	document.getElementById("price_first_child").innerHTML = "";
+	document.getElementById("price_bean").innerHTML = "";
+	document.getElementById("price_adult").innerHTML = "";
+	document.getElementById("price_child").innerHTML = "";
+	document.getElementById("price_concession").innerHTML = "";
+	document.getElementById("cost").innerHTML = "";	
 }
 
 function confirm()
 {
+	var submit = document.getElementById("submit");
 	if (document.getElementById("maxima").checked == false && document.getElementById("rivola").checked == false )
 	{
-	document.getElementById("submit").value="Please Select Cinema";
+		submit.value="Please Select Cinema";
 	}
 	else if (document.getElementById("day").selectedIndex == 0)
 	{
-	document.getElementById("submit").value="Please Select Day";
+		submit.value="Please Select Day";
 	}
 	else if (document.getElementById("time").selectedIndex == 0)
 	{
-	document.getElementById("submit").value="Please Select Time";
+		submit.value="Please Select Time";
 	}
 	else
 	{
-	calculate();
+		calculate();
 		if (document.getElementById("price").value == 0)
 		{
-		document.getElementById("submit").value="Minimum 1 Ticket Must Be Purchased";
+			submit.value="Minimum 1 Ticket Must Be Purchased";
 		}
 		else if (document.getElementById("price").value > 0)
 		{
-		document.getElementById("submit").disabled = false;
-		document.getElementById("submit").value="Book Now!";
+			submit.disabled = false;
+			submit.value="Book Now!";
 		}
 	}
+}
+
+function showHideSchedule()
+{
+	var schedule_button = document.getElementById("schedule_toggle");
+	var schedule_table = document.getElementById("schedule_table");
+	if (schedule_button.value == "hidden")
+		{
+		schedule_button.value = "shown";
+		schedule_button.innerHTML = "Hide Schedule";
+		schedule_table.hidden = false;
+		}
+	else if (schedule_button.value == "shown")
+		{
+		schedule_button.value = "hidden";
+		schedule_button.innerHTML = "Show Schedule";
+		schedule_table.hidden = true;
+		}
+}
+
+function showHidePricing()
+{
+	var pricing_button = document.getElementById("pricing_toggle");
+	var pricing_table = document.getElementById("pricing_table");
+	if (pricing_button.value == "hidden")
+		{
+		pricing_button.value = "shown";
+		pricing_button.innerHTML = "Hide Pricing";
+		pricing_table.hidden = false;
+		}
+	else if (pricing_button.value == "shown")
+		{
+		pricing_button.value = "hidden";
+		pricing_button.innerHTML = "Show Pricing";
+		pricing_table.hidden = true;
+		}
 }
